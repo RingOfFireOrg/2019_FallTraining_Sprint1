@@ -22,8 +22,8 @@ public class TankDrive extends DifferentialDrive {
 					new WPI_TalonSRX(RobotMap.MOTOR_FRONT_RIGHT), 
 					new WPI_VictorSPX(RobotMap.MOTOR_BACK_RIGHT))
 		);
-        
-        initEncoder(leftEncoder);
+
+		initEncoder(leftEncoder);
 		initEncoder(rightEncoder);
 	}
 
