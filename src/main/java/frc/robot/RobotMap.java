@@ -5,8 +5,7 @@ public class RobotMap {
 	// Ports not on robot
 	// Joysticks
 	public static final int JOYSTICK_DRIVE_LEFT = 1;
-	public static final int JOYSTICK_DRIVE_RIGHT = 2;
-	public static final int JOYSTICK_MANIPULATOR = 3;
+	public static final int JOYSTICK_DRIVE_RIGHT = 0;
 
 	// Analog Ports
 	// Robot Ports
@@ -23,5 +22,4 @@ public class RobotMap {
 	public static final int DRIVE_TRAIN_RIGHT_ENCODER_A = 2;
 	public static final int DRIVE_TRAIN_RIGHT_ENCODER_B = 3;
 
-	public static final int FLAG_SERVO = 0;
 }
