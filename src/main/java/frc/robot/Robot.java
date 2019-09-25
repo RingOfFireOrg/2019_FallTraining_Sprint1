@@ -5,6 +5,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.DigitalOutput;
 
 /**
  * Don't change the name of this or it won't work. (The manifest looks for
@@ -13,8 +14,12 @@ import edu.wpi.first.wpilibj.Joystick;
 public class Robot extends TimedRobot {
     private Joystick leftStick = new Joystick(RobotMap.JOYSTICK_DRIVE_LEFT);
     private Joystick rightStick = new Joystick(RobotMap.JOYSTICK_DRIVE_RIGHT);
+    private Joystick manipulatorStick = new Joystick(RobotMap.JOYSTICK_MANIPULATOR);
+    private DigitalOutput LED_color_output = new DigitalOutput(RobotMap.COLOR_CHOICE);
+
 
     TankDrive tankDrive = new TankDrive();
+    Arm arm = new Arm(RobotMap.FLAG_SERVO);
 
     /**
      * This function is run when the robot is first started up and should be used
@@ -22,6 +27,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotInit() {
+        LED_color_output.set(true);
     }
 
     /**
@@ -66,8 +72,10 @@ public class Robot extends TimedRobot {
     public void teleopPeriodic() {
         double leftSpeed = leftStick.getY();
         double rightSpeed = rightStick.getY();
+        double manipPosition = manipulatorStick.getX();
 
         tankDrive.drive(leftSpeed, rightSpeed);
+        arm.goToPosition(manipPosition);
     }
 
     /**
