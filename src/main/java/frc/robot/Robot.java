@@ -28,6 +28,7 @@ public class Robot extends TimedRobot {
     @Override
     public void robotInit() {
         LED_color_output.set(true);
+        arm.goToPosition(0.0);
     }
 
     /**

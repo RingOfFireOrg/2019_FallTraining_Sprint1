@@ -16,7 +16,7 @@ public class Arm  {
 	}
 
     // utility function
-	private static int joystick_to_degrees(double joystick_reading) {
+	private int joystick_to_degrees(double joystick_reading) {
         /* convert [-1.0,1.0] to [0,180] */;
         double offset_from_midpoint = MIDPOINT * joystick_reading;
         double degrees = MIDPOINT + offset_from_midpoint;
@@ -24,7 +24,7 @@ public class Arm  {
     }	
     
     public void goToPosition(double joystick_reading) {
-        angle = this.joystick_to_degrees(joystick_reading)
+        angle = this.joystick_to_degrees(joystick_reading);
         actuator.setAngle(angle);
     }
 
