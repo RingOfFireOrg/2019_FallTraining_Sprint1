@@ -11,7 +11,7 @@ public class TankDrive extends DifferentialDrive {
 	}
 
 	public void drive(double leftSpeed, double rightSpeed) {
-		int exponent = 2;
+/*		int exponent = 1;
 		if (leftSpeed < 0){
 			leftSpeed = -Math.pow(leftSpeed, exponent);
 		}
@@ -23,7 +23,7 @@ public class TankDrive extends DifferentialDrive {
 		}
 		if (rightSpeed > 0){
 			rightSpeed = Math.pow(rightSpeed, exponent);
-		}
+		}*/
 		tankDrive(leftSpeed, rightSpeed);
 	}
 }
