@@ -71,8 +71,8 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void teleopPeriodic() {
-        double leftSpeed = leftStick.getY()*0.7;
-        double rightSpeed = rightStick.getY()*0.7;
+        double leftSpeed = leftStick.getY()*0.8;
+        double rightSpeed = rightStick.getY()*0.8;
         double manipPosition = manipulatorStick.getX();
 
         tankDrive.drive(leftSpeed, rightSpeed);
